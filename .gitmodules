@@ -1,0 +1,6 @@
+[submodule "src/strapi-leafletjs-backend"]
+	path = src/strapi-leafletjs-backend
+	url = git@github.com:BennEntterprise/strapi-leafletjs-backend.git
+[submodule "src/strapi-leafletjs-frontend"]
+	path = src/strapi-leafletjs-frontend
+	url = git@github.com:BennEntterprise/strapi-leafletjs-frontend.git
