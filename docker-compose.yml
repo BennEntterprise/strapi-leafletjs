@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./src/strapi-leafletjs-backend:/app
+    ports:
+      - "1337:1337"
+    command: sh -c "npm install && npm run develop"
+    environment:
+      NODE_ENV: development
+      DATABASE_CLIENT: sqlite
+      DATABASE_FILENAME: /app/data.db
+  
+
+  frontend:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./src/strapi-leafletjs-frontend:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_API_URL: http://backend:1337
+
+  
